@@ -36,8 +36,8 @@ export default function ProductManagement() {
 
     useEffect(() => {
         if (successCreate) {
-            dispatch({ type: PRODUCT_CREATE_RESET });
             navigate(`/product/${createdProduct._id}/edit`);
+            dispatch({ type: PRODUCT_CREATE_RESET });
         } else if (errorCreate) {
             dispatch({ type: PRODUCT_CREATE_RESET });
         } else if (successDelete) {
