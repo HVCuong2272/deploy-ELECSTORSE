@@ -68,7 +68,7 @@ function App() {
         if (window.location.href.includes('/paymentvnp/vnpay/callback')) {
             console.log('vd yes', window.location.href);
             const vnpayHandle = async () => {
-                const res = await axiosInstance.post(window.location.href, null);
+                const res = await axios.post(window.location.href, null);
             };
             vnpayHandle();
             setTimeout(() => {
