@@ -110,6 +110,7 @@ export const createProduct = () => async (dispatch, getState) => {
                 },
             },
         );
+        console.log('dataaaaaaaaaaaaaaaaaaaaa', data)
         dispatch({ type: PRODUCT_CREATE_SUCCESS, payload: data.product });
     } catch (error) {
         dispatch({
