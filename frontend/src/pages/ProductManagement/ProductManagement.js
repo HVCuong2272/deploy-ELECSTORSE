@@ -146,7 +146,7 @@ export default function ProductManagement() {
                         <table className={cx('product-management-table')}>
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    {/*<th>ID</th>*/}
                                     <th>NAME</th>
                                     <th>PRICE</th>
                                     <th>COUNT IN STOCK</th>
@@ -162,7 +162,7 @@ export default function ProductManagement() {
                             <tbody>
                                 {products.map((product) => (
                                     <tr key={product._id}>
-                                        <td>{product._id}</td>
+                                        {/*<td>{product._id}</td>*/}
                                         <td>{product.name}</td>
                                         <td>{product.price}</td>
                                         <td>{product.countInStock}</td>
