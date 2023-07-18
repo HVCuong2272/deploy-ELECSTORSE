@@ -100,7 +100,7 @@ export default function OrderHistory() {
                     <table className={cx('order-history-table')}>
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                {/*<th>ID</th>*/}
                                 <th>DATE</th>
                                 <th>TOTAL</th>
                                 <th>PAID</th>
@@ -115,7 +115,7 @@ export default function OrderHistory() {
                             {orders &&
                                 orders.map((order) => (
                                     <tr key={order._id}>
-                                        <td>{order._id}</td>
+                                        {/*<td>{order._id}</td>*/}
                                         {/* <td>{order.createdAt.substring(0, 10)}</td> */}
                                         <td>{`${new Date(order.createdAt).toLocaleDateString('en-GB')} ${new Date(
                                             order.createdAt,
