@@ -95,7 +95,7 @@ export default function ProductManagement() {
         <div className={cx('product-management-container')}>
             <div className={cx('product-management-heading')}>
                 <h1>Products</h1>
-                {localStorage.getItem('userInfo') && JSON.parse(localStorage.getItem('userInfo')).isSeller === true && (
+                {localStorage.getItem('userInfo') && (JSON.parse(localStorage.getItem('userInfo')).isSeller === true || JSON.parse(localStorage.getItem('userInfo')).isAdmin === true) && (
                     <button type="button" className={cx('btn', 'btn-fill-out', 'btn-block')} onClick={createHandler}>
                         Create Product
                     </button>
