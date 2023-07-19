@@ -2,6 +2,7 @@ const expressAsyncHandler = require("express-async-handler");
 const { data } = require("../data");
 const Product = require("../models/productModel");
 const User = require("../models/userModel");
+const Order = require("../models/orderModel");
 
 const getAllProducts = expressAsyncHandler(async (req, res) => {
   const pageSize = Number(req.query.itemsPerPage) || 9;
@@ -168,6 +169,21 @@ const createProductReview = expressAsyncHandler(async (req, res) => {
         .status(400)
         .send({ message: "You already submitted a review" });
     }
+    else {
+    const userOrder = await Order.find({ user: req.user.id }).select("orderItems");
+    var checking = false;
+    userOrder.forEach(({orderItems}) => {
+      var check = orderItems.some(item => item.product.equals(productId));
+      console.log('chek ', check)
+      if(check){
+        checking = true;
+      }
+    })
+    if (!checking){
+      return res
+        .status(400)
+        .send({ message: "Please buy the product before review" });
+    }
     const review = {
       userId: req.body.userId,
       avatar: req.body.avatar,
@@ -194,7 +210,7 @@ const createProductReview = expressAsyncHandler(async (req, res) => {
       message: "Review Created",
       review: updatedProduct.reviews[updatedProduct.reviews.length - 1],
     });
-  } else {
+  }} else {
     res.status(404).send({ message: "Product not Found" });
   }
 });
