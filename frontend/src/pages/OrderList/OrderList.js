@@ -282,7 +282,7 @@ function OrderList() {
                     <table className={cx('order-list-table')}>
                         <thead>
                             <tr>
-                                <th>ID</th>
+                                {/*<th>ID</th>*/}
                                 <th>USER ORDER NAME</th>
                                 <th>DATE</th>
                                 <th>ORDER TOTAL</th>
@@ -309,7 +309,7 @@ function OrderList() {
                                         onClick={(e) => handleWatch(e, order._id, order.isWatch)}
                                         id="table-row1"
                                     >
-                                        <td>{order._id}</td>
+                                        {/*<td>{order._id}</td>*/}
                                         <td>{order.user.name}</td>
                                         {/* <td>{order.createdAt.substring(0, 10)}</td> */}
                                         {/* <td>{new Date(order.createdAt).toLocaleDateString('en-GB')}</td> */}
